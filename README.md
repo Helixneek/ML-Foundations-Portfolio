@@ -1,53 +1,50 @@
 # Machine Learning Foundations Portfolio
 
-A collection of technical implementations demonstrating basic Machine Learning competencies in **Supervised (Classification & Regression)** and **Unsupervised Learning**.
-
-These projects focus on the end-to-end data science lifecycle: Exploratory Data Analysis (EDA), rigorous Data Preprocessing, Feature Engineering, Model Training, and Evaluation.
+A collection of technical implementations demonstrating core Machine Learning competencies, progressing from classical Supervised/Unsupervised learning to NLP and Deep Learning.
 
 ## 🛠 Tech Stack
 * **Language:** Python 3.x
-* **Environment:** Google Colab / Jupyter Notebooks
-* **Libraries:** Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn
+* **Libraries:** TensorFlow (Keras), Scikit-Learn, Pandas, NumPy, Matplotlib, Seaborn, XGBoost, NLTK/Regex.
+* **Environment:** Google Colab / Jupyter Notebooks.
 
 ---
 
-## 📂 Project 1: Titanic Survival Prediction (Binary Classification)
-**Objective:** Predict passenger survival probability based on demographics and ticket class features.
+## 📂 Project Index
 
-* **Key Methodologies:**
-    * **Data Imputation:** Handled missing `Age` values using median imputation and `Embarked` values using mode, based on distribution analysis.
-    * **Feature Engineering:** Created binary and one-hot encoded variables for categorical features (`Sex`, `Embarked`).
-    * **Model:** Logistic Regression.
-* **Evaluation:**
-    * Achieved **~80% Accuracy** on unseen test data.
-    * Analyzed performance using a **Confusion Matrix** to visualize the trade-off between False Positives and False Negatives.
+### 1. Titanic Survival Prediction (Binary Classification)
+* **Goal:** Predict passenger survival probability based on demographics and ticket class.
+* **Tech:** Logistic Regression, Data Imputation, One-Hot Encoding.
+* **Key Insight:** Feature engineering on `Title` and `FamilySize` significantly improved model accuracy over raw data.
 
-## 📂 Project 2: Ames Housing Price Prediction (Regression)
-**Objective:** Predict final residential home sale prices based on 79 explanatory variables.
+### 2. Ames Housing Price Prediction (Regression)
+* **Goal:** Predict final residential home sale prices based on 79 explanatory variables.
+* **Tech:** Linear Regression, Correlation Matrix, Multicollinearity Analysis.
+* **Key Insight:** `OverallQual` and `GrLivArea` were the strongest predictors. Handled heteroscedasticity in high-value properties.
 
-* **Key Methodologies:**
-    * **Feature Selection:** Utilized a **Correlation Matrix** to identify the top 7 highly correlated features (e.g., `OverallQual`, `GrLivArea`) to prevent overfitting.
-    * **Multicollinearity Handling:** Analyzed and pruned redundant features (e.g., `GarageCars` vs. `GarageArea`).
-    * **Model:** Linear Regression (OLS).
-* **Evaluation:**
-    * **R² Score:** ~0.80 (Explaining 80% of price variance).
-    * **RMSE:** ~$39,600.
-    * **Visualization:** Plotted "Actual vs. Predicted" values to detect heteroscedasticity in high-value properties.
+### 3. Customer Segmentation (Clustering)
+* **Goal:** Segment mall customers into distinct target groups to inform marketing strategy.
+* **Tech:** K-Means Clustering, Elbow Method, PCA (for visualization).
+* **Key Insight:** Identified 5 distinct customer profiles, including "High Income/Low Spenders" (Savers) and "High Income/High Spenders" (VIPs).
 
-## 📂 Project 3: Customer Segmentation (Unsupervised Clustering)
-**Objective:** Segment mall customers into distinct target groups based on income and spending habits to inform marketing strategy.
+### 4. Telco Customer Churn (Ensemble Methods)
+* **Goal:** Predict customer churn to improve retention strategies.
+* **Tech:** Random Forest, XGBoost, SMOTE (Oversampling), GridSearchCV (Hyperparameter Tuning).
+* **Key Insight:** Optimized Recall by 12% using SMOTE. Identified `Tenure` and `Electronic Check` payments as primary churn drivers.
 
-* **Key Methodologies:**
-    * **Algorithm:** K-Means Clustering.
-    * **Optimal K Selection:** Implemented the **Elbow Method** to scientifically determine the optimal number of clusters (K=5) by minimizing WCSS (Within-Cluster Sum of Squares).
-* **Results:**
-    * Identified 5 distinct customer profiles, including "High Income/Low Spenders" (Savers) and "High Income/High Spenders" (VIPs).
-    * Visualized clusters in 2D space with clearly demarcated centroids.
+### 5. Movie Review Sentiment Analysis (NLP)
+* **Goal:** Classify movie reviews as Positive or Negative from raw text.
+* **Tech:** TF-IDF Vectorization, Regex (Text Cleaning), Linear SVC.
+* **Key Insight:** Achieved **87.8% Accuracy**. Demonstrated the critical importance of proper tokenization (fixing "mashed" text) for vectorizer performance.
+
+### 6. Handwritten Digit Recognition (Computer Vision)
+* **Goal:** Correctly identify handwritten digits (0-9) from the MNIST dataset.
+* **Tech:** Deep Learning, TensorFlow/Keras, Sequential Neural Network.
+* **Key Insight:** Built a fully connected network (Flatten -> Dense 128 -> Softmax) achieving **98.6% Test Accuracy**.
 
 ---
 
 ## 🚀 How to Run
 These projects are designed to run in a Jupyter environment.
 1.  Clone the repository.
-2.  Install dependencies: `pip install pandas numpy seaborn scikit-learn matplotlib`
-3.  Open the `.ipynb` files in Jupyter Lab or Google Colab.
+2.  Install dependencies: `pip install pandas numpy seaborn scikit-learn matplotlib tensorflow xgboost`
+3.  Open any `.ipynb` file in Jupyter Lab or Google Colab.
